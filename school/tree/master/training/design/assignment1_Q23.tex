@@ -1,0 +1,231 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                          
+    \usepackage{multirow}                                      
+    \usepackage{hhline}                                        
+    \usepackage{ifthen}
+    \usepackage{lscape}    
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 1}
+\author{Priya Bhatia}
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document solves a problem from Lines and Planes,where we solve the given pair of linear equations.
+\end{abstract}
+Download all python codes from
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/school/tree/master/training/design/codes
+\end{lstlisting}
+%
+and latex-tikz codes from
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/school/tree/master/training/design
+\end{lstlisting}
+%
+\section{Problem}
+Solve the following pair of linear equation
+\begin{align}
+\myvec{  158 & -378 \\ -378 & 152} x =
+\myvec{  -74 \\ -604}
+\end{align}
+\section{Explanation}
+Let the matrix is A and b is the vector.
+So,Ax = b
+Then we can calculate x = $A^{-1}$ . b
+\begin{align}
+\vec{A} = \myvec{158 & -378 \\ -378 & 152}
+\end{align}
+\begin{align}
+\vec{b} = \myvec{-74 \\ -604}
+\end{align}
+\section{Solution}
+\begin{align}
+\vec{A} = \myvec{158 & -378 \\ -378 & 152}
+\end{align}
+\begin{align}
+\vec{b} = \myvec{-74 \\ -604}
+\end{align}
+Augmented Matrix is : Ax = b
+\begin{align}
+\vec{R} = \myvec{  0 & -1 \\
+1 & 0}
+\end{align}
+Now,multiply R on both sides, we get :
+RAx = Rb
+\begin{align}
+\myvec{0 & -1 \\ 1 & 0}
+\myvec{158 & -378 \\ -378 & 152} x = \nonumber \\
+\myvec{0 & -1 \\ 1 & 0}
+\myvec{-74 \\ -604}
+\end{align}
+After multiplication of matrix:
+\begin{align}
+\myvec{378 & -152 \\ -158 & -378} x =
+\myvec{604 \\ -74}
+\end{align}
+Now, multiply the matrix A on both sides,we get:
+ARAx = ARb
+\begin{align}
+\myvec{158 & -378 \\ -378 & 152}
+\myvec{378 & -152 \\ -158 & -378} x = \nonumber \\
+\myvec{158 & -378 \\ -378 & 152}
+\myvec{604 \\ -74}
+\end{align}
+Now, after multiplication of above matrices:
+\begin{align}
+\myvec{0 & 118,868 \\ -118,868 & 0 } x =
+\myvec{123404 \\ -239560 }
+\end{align}
+Now, both the rows is row/118,868:
+\begin{align}
+\myvec{0 & 1 \\ -1 & 0} x = \myvec{30851/29717 \\ -59890/29717}
+\end{align}
+As we know EE$^ {-1}$ = I,
+Now inverse of the below matrix is:
+\begin{align}
+\myvec{0 & 1 \\-1 & 0} = \myvec{0 & -1 \\ 1 & 0}
+\end{align}
+Now multiply with the inverse of the Matrix in order to get the identity Matrix :
+\begin{align}
+\myvec{0 & -1 \\ 1 & 0}
+\myvec{0 & 1 \\ -1 & 0} x = \nonumber \\ 
+\myvec{0 & -1 \\ 1 & 0}
+\myvec{30851/29717 \\ -59890/29717}
+\end{align}
+So, final matrix is after matrix multiplication:
+\begin{align}
+\myvec{1 & 0 \\ 0 & 1} x =
+\myvec{59890/29717 \\ 30851/29717}
+\end{align}
+So, final result is :
+\begin{align}
+x = \myvec{59890/29717 & 30851/29717}
+\end{align}
+\end{document}
