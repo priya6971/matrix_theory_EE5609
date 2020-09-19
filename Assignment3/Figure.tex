@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+\coordinate (D) at (0,4);
+\coordinate (A) at (4,4);
+\coordinate (B) at (0,0);
+\coordinate (C) at (4,0);
+\coordinate (M) at (2,2);
+\draw (A)node[above]{$A$}--(B)node[below]{$B$}--(C)node[below]{$C$}--cycle;
+\draw (D)node[above]{$D$}--(B)node[below]{$B$}--(C)node[below]{$C$}--cycle;
+\draw(M)node[below]{$M$}--(D)node[above]{$D$};
+\tkzMarkRightAngle(D,B,C)
+\tkzMarkRightAngle(A,C,B)
+\end{tikzpicture}
