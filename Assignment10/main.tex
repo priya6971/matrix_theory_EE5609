@@ -1,0 +1,260 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+
+
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+
+\usepackage{tkz-euclide} %loads TikZ and tkz-base
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                          
+    \usepackage{array}                                          
+    \usepackage{longtable}                                      
+    \usepackage{calc}                                          
+    \usepackage{multirow}                                      
+    \usepackage{hhline}                                        
+    \usepackage{ifthen}
+    \usepackage{lscape}    
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 10}
+\author{Priya Bhatia}
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document gives an explicit description of the vectors in $R^5$ which are linear combination of the vectors.
+\end{abstract}
+%
+Download latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/Assignment10
+\end{lstlisting}
+%
+%
+Download python codes from 
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/Assignment10/codes
+\end{lstlisting}
+%
+\section{\textbf{Problem}}
+Give an explicit description of the type $b_j=\sum_{i=1}^{r} b_{ki}R_{ij}$ for the vectors
+\begin{align}
+    \beta &= (b_1,b_2,b_3,b_4,b_5) \nonumber
+\end{align}
+in $R^5$ which are linear combinations of the vectors
+\begin{align}
+    \alpha_1 &= (1,0,2,1,-1), \\
+    \alpha_2 &= (-1,2,-4,2,0), \\
+    \alpha_3 &= (2,-1,5,2,1), \\
+    \alpha_4 &= (2,1,3,5,2)
+\end{align}
+\section{\textbf{Solution}}
+Above matrix represented as: $Ax = \beta$
+\begin{align}
+    \myvec{1 & -1 & 2 & 2 \\
+                    0 & 2 & -1 & 1 \\
+                    2 & -4 & 5 & 3 \\
+                    1 & 2 & 2 & 5 \\
+                    -1 & 0 & 1 & 2}x &= \beta\\
+    \myvec{1 & -1 & 2 & 2 \\
+                    0 & 2 & -1 & 1 \\
+                    2 & -4 & 5 & 3 \\
+                    1 & 2 & 2 & 5 \\
+                    -1 & 0 & 1 & 2}x &= 
+                    \myvec{b_1 \\ b_2 \\ b_3\\ b_4 \\ b_5} \label{eq_2}
+\end{align}
+Now finding row space of $A$ is equivalent to finding column space of $A^T$. So, here we do elementary matrix multiplication of the $A^T$ matrix whose rows are given by $\alpha_i's$ :
+\begin{align} \nonumber
+    \myvec{1 & 0 & 0 & 0 \\
+           1 & 1 & 0 & 0 \\
+           0 & 0 & 1 & 0 \\
+           0 & 0 & 0 & 1} \nonumber
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           -1 & 2 & -4 & 2 & 0 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} =
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           0 & 2 & -2 & 3 & -1 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} \\ \nonumber
+    \myvec{1 & 0 & 0 & 0 \\
+           1 & 1 & 0 & 0 \\
+           -2 & 0 & 1 & 0 \\
+           0 & 0 & 0 & 1} 
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           -1 & 2 & -4 & 2 & 0 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} =
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           0 & 2 & -2 & 3 & -1 \\
+           0 & -1 & 1 & 0 & 3 \\
+           2 & 1 & 3 & 5 & 2} \\\nonumber
+    \myvec{1 & 0 & 0 & 0 \\
+           1 & 1 & 0 & 0 \\
+           -2 & 0 & 1 & 0 \\
+           -2 & 0 & 0 & 1}
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           -1 & 2 & -4 & 2 & 0 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} =
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           0 & 2 & -2 & 3 & -1 \\
+           0 & -1 & 1 & 0 & 3 \\
+           0 & 1 & -1 & 3 & 4}\\ \nonumber
+    \myvec{1 & 0 & 0 & 0 \\
+           1 & 1 & 0 & 0 \\
+           -2 & 0 & 1 & 0 \\
+           -4 & 0 & 1 & 1}
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           -1 & 2 & -4 & 2 & 0 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} =
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           0 & 2 & -2 & 3 & -1 \\
+           0 & -1 & 1 & 0 & 3 \\
+           0 & 0 & 0 & 3 & 7} \\ \nonumber
+\end{align}
+Now final row reduced echelon form of above matrix is:
+\begin{align}\nonumber
+    \myvec{0.67 & -1.67 & -2 & 1.33\\
+           0.5 & -1.5 & -2.5 & 1.5\\
+           -0.167 & 1.17 & 1.5 & -0.83\\
+           -0.5 & -0.5 & -0.5 & 0.5} 
+    \myvec{1 & 0 & 2 & 1 & -1 \\
+           -1 & 2 & -4 & 2 & 0 \\
+           2 & -1 & 5 & 2 & 1 \\
+           2 & 1 & 3 & 5 & 2} \\ 
+    = \myvec{1 & 0 & 2 & 0 & 0 \\
+           0 & 1 & -1 & 0 & 0 \\
+           0 & 0 & 0 & 1 & 0 \\
+           0 & 0 & 0 & 0 & 1}
+\end{align}
+Now if we check for linear independence of $A^T$ matrix, we can do so by the following method:
+\begin{align}
+    a_1\myvec{1\\0\\0\\0} + a_2\myvec{0\\1\\0\\0} + a_3\myvec{2\\-1\\0\\0} + a_4\myvec{0\\0\\1\\0} + a_5\myvec{0\\0\\0\\1} = \myvec{0\\0\\0\\0} \label{eq_1}
+\end{align}
+Now from \eqref{eq_1}, we can find the value of $a_1,a_2,a_3,a_4,a_5$ and if all the scalar values came out to be 0, then above matrix is linearly independent otherwise linearly dependent:
+\begin{align}
+    a_1+2a_3 &= 0 \\
+    a_2-a_3 &= 0 \\
+    a_4 &= 0 \\
+    a_5 &= 0
+\end{align}
+Using above equations, we can find out that the value of $a_1,a_2,a_3,a_4,a_5$ is equal to 0. Thus, this indicates that column vectors of matrix $A$ are linearly independent. Thus, the required solution of above problem is matrix $A$ as mentioned in \eqref{eq_2}.
+\end{document}
