@@ -1,0 +1,191 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 17}
+\author{Mtech in AI Department\\Priya Bhatia\\AI20MTECH14015}
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document illustrates about the properties related to projection and its relevant proof.
+\end{abstract}
+%
+Download the latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/Assignment17
+\end{lstlisting}
+\section{\textbf{Problem}}
+%
+Let $E$ be a projection of $V$ and let $T$ be a linear operator on $V$. Prove that the range of $E$ is invariant under $T$ if and only if $ETE$ = $TE$. Prove that both the range and null space of $E$ are invariant under $T$ if and only if $ET$ = $TE$. 
+%
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{1}
+\begin{longtable}{|c|l|}
+    \hline
+	\multirow{3}{*}{Proof of $ETE$ = $TE$} 
+	& \\
+	& Any projection $E$ is represented by a matrix that is a part of an identity matrix\\
+	& Assume the Basis can be defined as follows:\\
+	& $B$ = $\{\alpha_1,...,\alpha_r,....,\alpha_n\}$\\
+	& such that $E_{ii}$ = 1 for i $\le$ r and 0 elsewhere\\
+	& $E_{B}$ = $\myvec{$I$ & 0 \\ 0 & 0}$\\
+	& where $I$ is the $r$ $\times$ $r$ matrix\\
+	& Let $\alpha$ = $\brak{a_1,....,a_n}$\\
+	& $\implies$ $T\brak{E_{\alpha}}$ = $T\brak{a_1,...,a_r,...0}$ = $\beta$ \\
+	& If we assume $T$ to be invariant over the range $W$ of $E$, then $\beta$ $\in$ $W$ \\
+	& $\beta$ = $\brak{\beta_1,...,\beta_r,...,0}$, $E_{\beta}$ = $\beta$\\
+	& Therefore, $ETE$ = $TE$ \\
+	&\\
+	\hline
+	\multirow{3}{*}{Proof of $ET$ = $TE$} 
+	& \\
+	& Consider the same assumption for basis $B$ and projection $E$ as defined above.\\
+	& $B$ = $\{\alpha_1,...,\alpha_r,....,\alpha_n\}$\\
+	& $E_{B}$ = $\myvec{$I$ & 0 \\ 0 & 0}$\\
+	& where $I$ is the $r$ $\times$ $r$ matrix\\
+	& Let $TE$ $\ne$ $ET$, then there exists some vector $V$ such that \\
+	& $T\brak{a_1,...,a_r,...0}$ $\ne$ $\brak{Ta_1,...,Ta_r,...,0}$\\
+	& But for this case, $T$ is not an invariant of $W$.\\
+	& Assuming that $T$ is an invariant of $W$,$T\brak{a_1,...,a_r,...0}$ $\in$ $W$ for all $\alpha$ $\in$ $W$.\\
+	& Therefore, $T\brak{a_1,...,a_r,...0}$ = $\brak{Ta_1,...,Ta_r,...,0}$ $\implies$ $ET$ = $TE$\\
+	&\\
+	\hline
+	\multirow{3}{*}{Conclusion} & \\
+	& Hence, it is proved that the range of $E$ is invariant under $T$ if and only if\\
+	& $ETE$ = $TE$.\\
+	& And both the range and null space of $E$ are invariant under $T$ if and only if\\
+	& $TE$ = $ET$.\\
+	&\\
+	\hline
+	\caption{Illustration of Proof}
+    \label{table:1}
+\end{longtable}
+\end{document}
