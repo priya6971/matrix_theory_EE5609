@@ -1,0 +1,266 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 18}
+\author{Mtech in AI Department\\Priya Bhatia\\AI20MTECH14015}
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document illustrates the concept of minimal polynomial, null space and basis.
+\end{abstract}
+%
+Download the latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/Assignment18
+\end{lstlisting}
+\section{\textbf{Problem}}
+%
+Let $T$ be a linear operator on $R^3$ which is represented in the standard ordered basis by the matrix 
+\begin{align}
+    \myvec{6&-3&-2\\
+           4&-1&-2\\
+           10&-5&-3}
+\end{align}
+Express the minimal polynomial $p$ for $T$ in the form $p$ = $p_1p_2$, where $p_1$ and $p_2$ are monic and irreducible over the field of real numbers. Let $W_i$ be the null space of $p_i\brak{T}$. Find the basis $B_i$ for the spaces $W_1$ and $W_2$. If $T_i$ is the operator induced on $W_i$ by $T_i$, find the matrix of $T_i$ in the basis $B_i$ above.
+%
+\section{\textbf{Definitions}}
+\renewcommand{\thetable}{1}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c|l|}
+    \hline
+	\multirow{3}{*}{Characteristic Polynomial} 
+	& \\
+	& For an $n\times n$ matrix $\vec{A}$, characteristic polynomial is defined by,\\
+	&\\
+	& $\qquad\qquad\qquad p\brak{x}=\mydet{x\Vec{I}-\Vec{A}}$\\
+	&\\
+	\hline
+	\multirow{3}{*}{Minimal Polynomial} 
+	&\\
+	& Minimal polynomial $m\brak{x}$ is the smallest factor of characteristic polynomial\\
+	& $p\brak{x}$ such that,\\
+	&\\
+	& $\qquad \qquad \qquad m\brak{\vec{A}}=0$\\
+	& \\
+	& Every root of characteristic polynomial should be the root of minimal\\
+	& polynomial and the minimal polynomial divides the charateristic polynomial.\\
+	&\\
+	\hline
+	\multirow{3}{*}{Basis Theorem} 
+	&\\
+	& Let $V$ be a subspace of dimension $m$. Then:\\
+	& Any $m$ linearly independent vectors in $V$ forms a basis for $V$.\\
+	& Any $m$ vectors that span $V$ forms a basis for $V$.\\
+	&\\
+    \hline
+\end{tabular}
+\label{table:1}
+    \caption{Definitions}
+\end{table}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|c|l|}
+    \hline
+	\multirow{3}{*}{Express Minimal Polynomial} 
+	& \\
+	& $A$ = \myvec{6&-3&-2\\4&-1&-2\\10&-5&-3} \\
+	& Characteristic Polynomial = $\mydet{xI-A}$ = \mydet{x-6&3&2\\-4&x+1&2\\-10&5&x+3}\\
+	& By solving above determinant, we find out that\\
+	& $x^3-2x^2+x-2$ = $\brak{x-2}\brak{x^2+1}$ \\
+	& Since, $T-2I$ $\ne$ 0 and the minimal polynomial divides the characteristic\\
+	& polynomial, thus minimal polynomial $p$ for $T$ is $p$ = $m\brak{x}$\\
+	& $p$ = $\brak{x-2}\brak{x^2+1}$ \\
+	& Put $p_1$ = $\brak{x-2}$ and $p_2$ = $\brak{x^2+1}$\\
+	& Thus, $p$ = $p_1p_2$ \\
+	&\\
+	\hline
+	\multirow{3}{*}{Bases $B_1$ and matrix $T_1$} & \\
+	& Let $W_1$ = \{$\alpha$ $\in$ $R^3$/$p_1\brak{T}\alpha$ = 0,$\brak{T-2I}\alpha$ = 0\}  \\
+	& Therefore, $A-2I$ = $\myvec{4&-3&-2\\4&-3&-2\\10&-5&-5}$ $\xrightarrow{}$ $\myvec{-4&3&2\\-2&1&1\\0&0&0}$ $\xrightarrow{}$ $\myvec{-2&1&1\\0&1&0\\0&0&0}$ \\
+	& Rank of $A-2I$ is 2\\
+	& Nullity of $A-2I$ = no of columns - Rank = 3 - 2 = 1 \\
+	& That means the dimension of $W_1$ is 1\\ 
+	& Thus we can let, $\alpha_1$ = \myvec{1\\0\\2} $\in$ $W_1$ (Basis theorem mentioned in Definitions)\\
+	& Therefore, $B_1$ = \{$\alpha_1$\} is the basis for $W_1$\\
+	& Let $T_1$ be the matrix induced by $T$ on $W_1$\\
+	& $T_1\alpha_1$ = $T\alpha_1$ = \myvec{6&-3&-2\\4&-1&-2\\10&-5&-3} \myvec{1\\0\\2} = \myvec{2\\0\\4} = 2 \myvec{1\\0\\2} = 2$\alpha_1$ \\
+	& $[T_1]_{B_1}$ = $[2]$ \\
+	&\\
+	\hline
+    \multirow{3}{*}{Bases $B_2$ and matrix $T_2$} & \\
+	& Let $W_2$ = \{$\alpha$ $\in$ $R^3$/$p_2\brak{T}\alpha$ = 0,$\brak{T^2+I}\alpha$ = 0\}  \\
+	& Therefore, $A^2+I$ = $\myvec{6&-3&-2\\4&-1&-2\\10&-5&-3}\myvec{6&-3&-2\\4&-1&-2\\10&-5&-3}+\myvec{1&0&0\\0&1&0\\0&0&1}$ = $\myvec{5&-5&0\\0&0&0\\10&-10&0}$ \\
+	& Rank of $A^2+I$ is 1\\
+	& Nullity of $A^2+I$ = no of columns - Rank = 3 - 1 = 2 \\
+	& That means the dimension of $W_2$ is 2\\ 
+	& Thus we can let, $\alpha_2$ = \myvec{1\\1\\0}, $\alpha_3$ = \myvec{0\\0\\1} $\in$ $W_2$(Basis theorem in Definitions)\\
+	& Therefore, $B_2$ = \{$\alpha_2,\alpha_3$\} is the basis for $W_2$\\
+	& Let $T_2$ be the matrix induced by $T$ on $W_2$\\
+	& $T_2\alpha_2$ = $T\alpha_2$ = \myvec{6&-3&-2\\4&-1&-2\\10&-5&-3} \myvec{1\\1\\0} = \myvec{3\\3\\5} = 3 \myvec{1\\1\\0} + 5 \myvec{0\\0\\1} = 3$\alpha_2$ + 5$\alpha_3$\\
+	& $T_2\alpha_3$ = $T\alpha_3$ = \myvec{6&-3&-2\\4&-1&-2\\10&-5&-3} \myvec{0\\0\\1} = \myvec{-2\\-2\\-3} = -2 \myvec{1\\1\\0} + -3 \myvec{0\\0\\1} = -2$\alpha_2$ - 3$\alpha_3$\\
+	& $\myvec{\alpha_2 & \alpha_3}[T_2]$ =  $\myvec{\alpha_2 & \alpha_3}$$\myvec{3&-2\\5&-3}$ \\
+	& \\
+	& $\implies$ $[T_2]_{B_2}$ = $\myvec{3&-2\\5&-3}$\\
+	\hline
+	\caption{Finding of Basis and corresponding matrix}
+    \label{table:2}
+\end{longtable}
+\section{\textbf{Summarization of Above Results}}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|c|l|}
+    \hline
+	\multirow{3}{*}{Express Minimal Polynomial} 
+	& \\
+	& $A$ = \myvec{6&-3&-2\\4&-1&-2\\10&-5&-3} \\
+	& We get, $p_1$ = $\brak{x-2}$ and $p_2$ = $\brak{x^2+1}$\\
+	& Thus, $p$ = $p_1p_2$ \\
+	&\\
+	\hline
+	\multirow{3}{*}{$W_i,B_i,T_i$} 
+	& \\
+	& $W_1$ = \{$\alpha$ $\in$ $R^3$/$p_1\brak{T}\alpha$ = 0,$\brak{T-2I}\alpha$ = 0\}\\
+	& $B_1$ = \{$\alpha_1$\} is the basis for $W_1$\\
+	& where, $\alpha_1$ = \myvec{1\\0\\2} \\
+	& $[T_1]_{B_1}$ = $[2]$ \\
+	&\\
+	& $W_2$ = \{$\alpha$ $\in$ $R^3$/$p_2\brak{T}\alpha$ = 0,$\brak{T^2+I}\alpha$ = 0\}\\
+	& $B_2$ = \{$\alpha_2,\alpha_3$\} is the basis for $W_2$\\
+	& where, $\alpha_2$ = \myvec{1\\1\\0}, $\alpha_3$ = \myvec{0\\0\\1} $\in$ $W_2$\\
+	& $[T_2]_{B_2}$ = $\myvec{3&-2\\5&-3}$\\
+	& \\
+	\hline
+	\caption{Conclusion of above Results}
+    \label{table:3}
+\end{longtable}
+\end{document}
