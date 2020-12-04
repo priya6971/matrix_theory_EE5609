@@ -1,0 +1,302 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 19}
+\author{Mtech in AI Department\\Priya Bhatia\\AI20MTECH14015}
+\maketitle
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This document illustrates the concept of orthonormal basis.
+\end{abstract}
+%
+Download the latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/priya6971/matrix_theory_EE5609/tree/master/Assignment19
+\end{lstlisting}
+\section{\textbf{Problem}}
+%
+Let $\{u_1,u_2,...,u_n\}$ be an orthonormal basis of $C^n$ as column vectors. Let $M$ = $\{u_1,u_2,...,u_k\}$ and $N$ = $\{u_{k+1},u_{k+2},...,u_n\}$ and $P$ be the diagonal $k \times k$ matrix with diagonal entries $\alpha_1,\alpha_2,....,\alpha_k$ $\in$ $R$. Then which of the following is true?
+
+1. Rank($\vec{MP{M}^*}$) = $\vec{k}$ whenever $\alpha_i$ $\ne$ $\alpha_j$, 1 $\leq$ $i$, $j$ $\leq$ $k$
+
+2. Trace($\vec{MP{M}^*}$) = $\sum_{i=1}^{k}\alpha_i$
+
+3. Rank($\vec{{M}^*N}$) = min($k$,$n-k$)
+
+4. Rank($\vec{M{M}^*}+\vec{N{N}^*}$) $<$ $n$
+%
+\section{\textbf{Definitions}}
+\renewcommand{\thetable}{1}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c|l|}
+    \hline
+	\multirow{3}{*}{Orthonormal Basis} 
+	& \\
+	& $B$ = $\{u_1,u_2,...,u_n\}$ is the Orthonormal basis for $C^n$ if it generates every vector $C^n$\\
+	& and the inner product $<u_i,u_j>$ = $0$ if $i$ $\ne$ $j$.\\
+	& That is the vectors are mutually perpendicular\\
+	& and $<u_i,u_j>$ = $1$ otherwise. \\
+	&\\
+	\hline
+	\multirow{3}{*}{Trace} 
+	&\\
+	& Trace of a square matrix $A$, denoted by $\Vec{tr(A)}$ is defined to be the sum of elements\\
+	& on the main diagonal(from the upper left to lower right) of $A$\\
+	& Some useful properties of Trace : \\
+	&  $\Vec{tr(AB)}$ =  $\Vec{tr(BA)}$, where $A$ is the $m$ $\times$ $n$ matrix and $B$ is the $n$ $\times$ $m$ matrix\\  
+	&\\
+	\hline
+	\multirow{3}{*}{Basis Theorem} 
+	&\\
+	& A nonempty subset of nonzero vectors in $R^n$ is called an orthogonal set\\
+	& if every pair of distinct vectors in the set is orthogonal. Any Orthogonal sets\\
+	&  of vectors are automatically linearly independent and if $A$ matrix columns are\\
+	& linearly independent,then it is invertible.\\
+	&\\
+    \hline
+\end{tabular}
+\label{table:1}
+    \caption{Definitions}
+\end{table}
+\newpage
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|c|l|}
+    \hline
+	\multirow{3}{*}{Rank($\vec{MP{M}^*}$) = $\vec{k}$} 
+	& \\
+	& $M$ and $M^*$ vectors are linearly independent and thus it is invertible\\
+	& (Since the elementary matrices are invertible, such multiplication does\\
+	& not change the rank of a matrix)\\
+	& $\implies$ Rank($\vec{MP{M}^*}$) = Rank($\vec{P}$) \\
+	& Now $\vec{P}$ be the diagonal $k \times k$ matrix with diagonal entries $\alpha_1,\alpha_2,....,\alpha_k$ $\in$ $R$.\\
+	& Rank($\Vec{P}$) is not always $k$. \\
+	& It can be less than k if any of the entries in $\alpha_1,\alpha_2,....,\alpha_k$ is 0.\\
+	& Thus, Rank($\vec{MP{M}^*}$) $\ne$ $\vec{k}$\\
+	& Thus, the given statement is false\\
+	&\\
+	\hline
+	\multirow{3}{*}{Trace($\vec{MP{M}^*}$) = $\sum_{i=1}^{k}\alpha_i$} & \\
+	& Trace($\vec{MP{M}^*}$) = Trace($\vec{{M}^*MP}$)\\
+	& (According to properties of trace mentioned in Definitions)\\
+	& $\vec{M}$ = $\myvec{u_1&u_2&u_3&....&u_k}$ \\
+	& $\vec{M^*}$ = $\myvec{\Bar{u_1}\\\Bar{u_2}\\\Bar{u_3}\\.\\.\\.\\\Bar{u_k}}$ \\
+	&\\
+	& $\vec{M^*M}$ = $\myvec{\Bar{u_1}u_1&0&0&...&0\\
+	                           0&\Bar{u_2}u_2&0&...&0\\
+	                           0&0&\Bar{u_3}u_3&...&0\\
+	                           .&.&.&...&.\\
+	                           0&0&0&...&\Bar{u_k}u_k}$\\
+	 & (Refer to Properties mentioned in Orthonormal Basis in Definition section\\
+	 & that is $<u_i,u_j>$ = $0$ if $i$ $\ne$ $j$)\\
+	 & \\
+	 & $\vec{M^*M}$ = $\myvec{1&0&0&...&0\\
+	                           0&1&0&...&0\\
+	                           0&0&1&...&0\\
+	                           .&.&.&...&.\\
+	                           0&0&0&...&1}$\\
+	& (Refer to Properties mentioned in Orthonormal Basis in Definition section\\
+	& that is $<u_i,u_j>$ = $1$ if $i$ = $j$)\\
+    & $\vec{M^*M}$ = $\vec{I^{k}}$\\
+    & $\vec{M^*MP}$ = $\vec{I^{k}P}$ = $\vec{P}$\\
+    & Trace($\vec{{M}^*MP}$) = Trace($\vec{I^{k}P}$) =  Trace($\vec{P}$) = $\sum_{i=1}^{k}\alpha_i$\\
+    & (Refer Definition section of Trace, it is sum of elements on the main diagonal)\\
+    & So, the given statement is true \\
+	& \\
+	\hline
+	\multirow{3}{*}{Rank($\vec{{M}^*N}$) = min($k$,$n-k$)} 
+	& \\
+	& $M$ = $\{u_1,u_2,...,u_k\}$ and $N$ = $\{u_{k+1},u_{k+2},...,u_n\}$ \\
+	& Consider orthogonal vectors,\\
+	& $u_1$ = \myvec{1\\0\\0\\0}; $u_2$ = \myvec{0\\1\\0\\0}\\
+	& $u_3$ = \myvec{0\\0\\1\\0}; $u_4$ = \myvec{0\\0\\0\\1}\\
+	& Consider $k$ = 2, then \\
+	& $M$ = $\myvec{u_1&u_2}$ = $\myvec{1&0\\0&1\\0&0\\0&0}$\\
+	& $M^*$ = $\myvec{1&0&0&0\\0&1&0&0}$\\
+	& $N$ = $\myvec{u_3&u_4}$ = $\myvec{0&0\\0&0\\1&0\\0&1}$\\
+	& $M^*N$ = $\myvec{0&0\\0&0}$\\
+	& Rank($M^*N$) = 0\\
+	& But, min($k$,$n-k$) = \brak{2,2} = 2 \\
+	& And, this is clear from above that Rank($\vec{{M}^*N}$) $\ne$ min($k$,$n-k$)\\
+	& Thus, above statement is false \\
+	&\\
+	\hline
+	\multirow{3}{*}{Rank($\vec{M{M}^*}+\vec{N{N}^*}$) $<$ $n$} 
+	& \\
+	& Rank($\vec{M}$) = Rank($\vec{M^*}$)\\
+	& Rank($\vec{N}$) = Rank($\vec{N^*}$)\\
+	& Rank($\vec{M}$+$\vec{N}$) $\le$ Rank($\vec{M}$) + Rank($\vec{N}$)\\
+	& $M$ = $\{u_1,u_2,...,u_k\}$ and $N$ = $\{u_{k+1},u_{k+2},...,u_n\}$ \\
+	& Consider orthogonal vectors,\\
+	& $u_1$ = \myvec{1\\0\\0\\0}; $u_2$ = \myvec{0\\1\\0\\0}\\
+	& $u_3$ = \myvec{0\\0\\1\\0}; $u_4$ = \myvec{0\\0\\0\\1}\\
+	& Consider $k$ = 2, then \\
+	& $M$ = $\myvec{u_1&u_2}$ = $\myvec{1&0\\0&1\\0&0\\0&0}$\\
+	& Rank($\vec{M}$) = $2$ = $k$\\
+	& $N$ = $\myvec{u_3&u_4}$ = $\myvec{0&0\\0&0\\1&0\\0&1}$\\
+	& Rank($\vec{N}$) = $2$ = $n-k$\\
+	& Thus, Rank($\vec{M{M}^*}+\vec{N{N}^*}$) = Rank($\vec{M}+\vec{N}$) = 4 = $n$\\
+	& Thus, above statement is false \\
+	&\\
+	\hline
+	\caption{Finding of True and False Statements}
+    \label{table:2}
+\end{longtable}
+\section{\textbf{Conclusion}}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|c|l|}
+    \hline
+	\multirow{3}{*}{Rank($\vec{MP{M}^*}$) = $\vec{k}$} 
+	& \\
+	& False \\
+	&\\
+	\hline
+	\multirow{3}{*}{{Trace($\vec{MP{M}^*}$) = $\sum_{i=1}^{k}\alpha_i$}} 
+	& \\
+	& True \\
+	& \\
+	\hline
+	\multirow{3}{*}{Rank($\vec{{M}^*N}$) = min($k$,$n-k$)} 
+	& \\
+	& False \\
+	& \\
+	\hline
+	\multirow{3}{*}{Rank($\vec{M{M}^*}+\vec{N{N}^*}$) $<$ $n$} 
+	& \\
+	& False \\
+	& \\
+	\hline
+	\caption{Conclusion of above Solutions}
+    \label{table:3}
+\end{longtable}
+\end{document}
